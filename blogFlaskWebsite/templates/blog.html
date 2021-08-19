@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Site</title>
+</head>
+<body>
+  {% for blogs in blog_data: %}
+          {% if blogs['id'] == 2: %}
+            <h2>{{ blogs['title'] }}</h2>
+            <h2>{{ blogs['content'] }}</h2>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>

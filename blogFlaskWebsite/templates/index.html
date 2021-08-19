@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+    </div>
+    {% for eachblog in blogs %}
+        <div class="content">
+            <div class="card">
+                <h2>{{ eachblog['title']}}</h2>
+                <p class="text">{{ eachblog['subtitle']}} </p>
+                <a href="{{ url_for('blog_post', blogid=eachblog['id'] )}}">Read</a>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+</body>
+<footer>
+    <p>@ Copyright {{currentyear}}. All Rights Reserved. Powered by Me.</p>
+</footer>
+</html>
